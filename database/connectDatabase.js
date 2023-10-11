@@ -1,9 +1,11 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
 
+const DATABASE = process.env.DATABASE_URL
 async function connectDatabase(){
 
 
-    const result = await  mongoose.connect('mongodb+srv://vikas:vikas@cluster0.t4bdehp.mongodb.net/assignment')
+    const result = await  mongoose.connect(DATABASE)
 
     return result
 } 
